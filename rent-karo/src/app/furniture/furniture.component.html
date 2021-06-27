@@ -1,0 +1,12 @@
+<div class="row row-cols-1 row-cols-md-3 g-4 container-fluid">
+  <div class="col" *ngFor="let furniture of furnitureList">
+    <div class="card h-100">
+      <div class="card-body text-center">
+      <img [src]="furniture.imgUrl" class="card-img-top" alt="furnitures">
+        <h5 class="card-title text-center">
+          <a class="stretched-link" [routerLink]="['/furniture-list',furniture.id]">{{ furniture.name }}</a>
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>

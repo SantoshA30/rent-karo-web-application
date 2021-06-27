@@ -1,0 +1,9 @@
+.accordion {
+    width: fit-content;
+}
+
+.empty-cart-title {
+  font-size: 30px;
+  text-align: center;
+  color: #313131;
+}

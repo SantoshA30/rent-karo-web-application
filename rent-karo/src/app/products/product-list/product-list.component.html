@@ -1,0 +1,41 @@
+<app-navigation></app-navigation>
+
+<!-- latest offer carousel : START -->
+<div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../../../assets/images/img1.png" class="d-block w-100 carousel-img" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../../../assets/images/img2.png" class="d-block w-100 carousel-img" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- latest offer carousel : END -->
+
+<!-- main product list : START -->
+<div class="row row-cols-1 row-cols-md-3 g-4 container-fluid mt-1">
+  <div class="col" *ngFor="let product of products">
+    <div class="card text-center">
+      <img [src]="product.imgUrl" class="icon-img" alt="product">
+      <div class="card-body text-center">
+        <p class="card-text">
+          <a class="stretched-link" [routerLink]="product.routerLink">{{ product.name }}</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- main product list : END -->

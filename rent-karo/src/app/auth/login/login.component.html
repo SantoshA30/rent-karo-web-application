@@ -1,0 +1,48 @@
+<!-- loading spinner -->
+<div *ngIf="isLoading" style="text-align: center;">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+
+<!-- Error handling -->
+<div class="alert alert-danger" role="alert" *ngIf="error">
+  {{ error }}
+</div>
+
+<!-- login / signup -->
+<div class="container-fluid" *ngIf="!isLoading">
+  <div class="row">
+    <div class="col"><img src="../../../assets/images/login-img.png" class="img-fluid" alt="..."></div>
+    <div class="col">
+      <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email"
+            aria-describedby="email" ngModel name="email" required email #email="ngModel">
+          <span *ngIf="email.touched && email.invalid" class="text-danger">Please enter a valid email.</span>
+        </div>
+        <!-- Password -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" ngModel name="password"
+            required minlength="6" #password="ngModel">
+            <span class="text-danger" *ngIf="password.touched && password.invalid">
+              Password is required & must be more than 6 characters.</span>
+        </div>
+        <!-- Confirm Password -->
+        <div class="mb-3" *ngIf="isLoginModeSignup">
+          <label for="confirmPassword" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="confirmPassword" ngModel
+            name="confirmPassword" required #confirmPassword="ngModel" pattern="{{ password.value }}">
+            <span *ngIf="confirmPassword.invalid && confirmPassword.touched">
+              <span *ngIf="confirmPassword.errors.required" class="text-danger">Confirm password is required.</span>
+              <span *ngIf="confirmPassword.errors.pattern" class="text-danger">Password and Confirm Password does not match.</span>
+            </span>
+        </div>
+        <!-- buttons -->
+        <button type="submit" class="btn btn-primary" (click)="switchModeToLogin()">Login</button> |
+        <button type="submit" class="btn btn-primary" (click)="switchModeToSignup()">Sign Up</button>
+      </form>
+    </div>
+  </div>
+</div>

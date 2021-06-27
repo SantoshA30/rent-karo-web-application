@@ -1,0 +1,4 @@
+/* to maintain distance between navbar and below content */
+.container {
+  margin-top: 5%;
+}

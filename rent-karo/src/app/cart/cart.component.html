@@ -1,0 +1,18 @@
+<!-- common navigation -->
+<app-navigation></app-navigation>
+
+<!-- empty cart image -->
+<div *ngIf="!isCartEmpty" class="text-center container-fluid">
+  <figure class="figure">
+    <img src="../../assets/images/empty-cart-img.png" class="figure-img img-fluid rounded" alt="empty cart" style="width: 30rem;">
+    <h3 class="empty-cart-title">No items in cart</h3>
+    <figcaption class="figure-caption">Add a few items to your cart and come back here for an
+      express checkout process!</figcaption>
+  </figure>
+  <div>
+    <button class="btn btn-primary" type="button" routerLink="/">Browse catalogue</button>
+  </div>
+</div>
+
+<!-- checkout -->
+<app-checkout *ngIf="isCartEmpty"></app-checkout>

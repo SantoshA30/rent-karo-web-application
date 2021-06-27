@@ -1,0 +1,14 @@
+.carousel-img {
+  border-radius: 12%;
+}
+
+.card-body {
+  padding-top: 10%;
+}
+
+.icon-img {
+  position: relative;
+  width: 19%;
+  top: 25px;
+  left: 40%;
+}

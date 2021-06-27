@@ -1,0 +1,102 @@
+<app-navigation></app-navigation>
+<div class="container-fluid">
+  <h3>Browse by Package Type</h3>
+    <div class="btn-group gap-3 mb-2" role="group" aria-label="package">
+      <button type="button" class="btn btn-outline-primary" (click)="showWeeklyPackage()">Weekly</button>
+      <button type="button" class="btn btn-outline-primary" (click)="showMonthlyPackage()">Monthly</button>
+      <button type="button" class="btn btn-outline-primary" (click)="showYearlyPackage()">Yearly</button>
+    </div>
+<div *ngIf="showPack">
+  <h4>{{ packageName }}</h4>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Furniture</th>
+      <th scope="col">Appliances</th>
+      <th scope="col">Electronics</th>
+      <th scope="col">Fitness</th>
+      <th scope="col">Package</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>
+        <ul>
+          <li>1 Bed</li>
+          <li>1 Mattress</li>
+          <li>1 Sofa</li>
+          <li>1 Wardrobe</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>1 Washing Machine</li>
+          <li>1 Refrigerator</li>
+          <li>1 Television</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>1 Smart Phone</li>
+          <li>1 Laptop</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>1 Tread Mill</li>
+        </ul>
+      </td>
+      <td><a (click)="addPremiumPackage(packageDuration)">
+            <button type="button" class="btn btn-primary">
+              Buy Premium @ Rs.{{ premiumPrice }} / {{ packageDuration }}
+            </button>
+         </a>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>
+        <ul>
+          <li>1 Bed</li>
+          <li>1 Mattress</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>1 Washing Machine</li>
+          <li>1 Refrigerator</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>1 Laptop</li>
+        </ul>
+      </td>
+      <td>NA</td>
+      <td><button type="button" class="btn btn-primary">
+        Buy Standard @ Rs.{{ standardPrice }} / {{ packageDuration }}</button></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>
+        <ul>
+          <li>1 Bed</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li>1 Refrigerator</li>
+        </ul>
+      </td>
+      <td>NA</td>
+      <td>NA</td>
+      <td><button type="button" class="btn btn-primary">
+        Buy Basic @ Rs.{{ basicPrice }} / {{ packageDuration }}</button></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+

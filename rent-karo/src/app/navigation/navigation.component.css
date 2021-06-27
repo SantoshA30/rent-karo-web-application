@@ -1,0 +1,16 @@
+.badge {
+  position: relative;
+  right: 8px;
+  top: -13px;
+}
+
+.bg-secondary {
+  padding: 4px;
+  border-radius: 15px;
+}
+
+.close-button-style {
+  margin-left: auto;
+  top: 7px;
+  right: 10px;
+}

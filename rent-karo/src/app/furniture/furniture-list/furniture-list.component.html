@@ -1,0 +1,11 @@
+<div class="row row-cols-1 row-cols-md-3 g-4 container-fluid">
+  <div class="col" *ngFor="let furniture of furnitureList.bedList">
+    <div class="card h-100">
+      <img [src]="furniture.imgUrl" class="card-img-top" alt="furnitures">
+      <div class="card-body text-center">
+        <h5 class="card-title text-center">{{ furniture.bedName }}</h5>
+      </div>
+      <div class="card-footer">Rs.{{ furniture.bedPrice }}/mo</div>
+    </div>
+  </div>
+</div>

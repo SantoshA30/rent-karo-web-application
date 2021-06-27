@@ -1,0 +1,10 @@
+<div *ngIf="product" class="container-fluid">
+  <div>
+    <h2>Product Details :</h2>
+      <ul>
+        <li>Name: {{ product.name }}</li>
+        <li>Type: {{ product.type }}</li>
+      </ul>
+      <button type="button" class="btn btn-primary" (click)="addToCart(product)">Buy</button>
+  </div>
+</div>
